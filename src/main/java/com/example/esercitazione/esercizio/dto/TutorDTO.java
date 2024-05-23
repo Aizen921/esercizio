@@ -1,0 +1,76 @@
+package com.example.esercitazione.esercizio.dto;
+
+import com.example.esercitazione.esercizio.entities.Student;
+
+import java.time.LocalDate;
+import java.util.List;
+
+public class TutorDTO {
+
+
+    private Long id;
+    private String name;
+    private String lastName;
+    private LocalDate birthDate;
+    private String email;
+    private List<Student> studentList;
+
+    public TutorDTO(Long id, String name, String lastName, LocalDate birthDate, String email) {
+        this.id = id;
+        this.name = name;
+        this.lastName = lastName;
+        this.birthDate = birthDate;
+        this.email = email;
+    }
+
+    public TutorDTO() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public LocalDate getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(LocalDate birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public List<Student> getStudentList() {
+        return studentList;
+    }
+
+    public void setStudentList(List<Student> studentList) {
+        this.studentList = studentList;
+    }
+}
