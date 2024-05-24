@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -17,6 +18,10 @@ public class TutorService {
     private TutorDAO tutorDAO;
     @Autowired
     private ModelMapper modelMapper;
+    public Tutor createTutor(Tutor tutor){
+        Tutor tutorSaved = tutorDAO.save(tutor);
+        return tutor;
+    }
 
     public List<TutorDTO> getTutorDTOList(){
         List<Tutor> tutorList = tutorDAO.findAll();
@@ -26,5 +31,13 @@ public class TutorService {
             tutorDTOList.add(tutorDTO);
         }
         return tutorDTOList;
+    }
+    public TutorDTO getTutorById(Long id){
+        Optional<Tutor> tutor = tutorDAO.findById(id);
+        TutorDTO tutorDTO = modelMapper.map(tutor,TutorDTO.class);
+        return tutorDTO;
+    }
+    public void deleteById(Long id){
+        tutorDAO.deleteById(id);
     }
 }

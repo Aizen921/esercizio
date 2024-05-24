@@ -10,8 +10,5 @@ import java.util.List;
 @RestController
 @RequestMapping("/tutor")
 public class TutorController {
-    @GetMapping
-    public List<TutorDTO> getTutors(){
 
-    }
 }
